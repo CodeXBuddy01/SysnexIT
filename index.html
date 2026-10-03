@@ -1,0 +1,1646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  />
+
+  <meta name="theme-color" content="#020814" />
+
+  <meta
+    name="description"
+    content="SYSNEXIT — We are working hard to make this site available for you very soon."
+  />
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X60DYTK2B4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-X60DYTK2B4');
+</script>
+
+  <title>SYSNEXIT — Coming Soon</title>
+
+  <style>
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      width: 100%;
+      min-height: 100%;
+      background: #020814;
+    }
+
+    body {
+      width: 100%;
+      min-height: 100%;
+      overflow-x: hidden;
+      background: #020814;
+      color: #fff;
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    /* =========================================================
+       MAIN PAGE
+    ========================================================= */
+
+    .page {
+      position: relative;
+      width: 100%;
+      min-height: 100svh;
+      overflow: hidden;
+      isolation: isolate;
+
+      background:
+        radial-gradient(
+          circle at 50% 35%,
+          rgba(0, 119, 255, 0.18),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 15% 80%,
+          rgba(0, 81, 180, 0.15),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 90% 70%,
+          rgba(0, 196, 255, 0.1),
+          transparent 25%
+        ),
+        linear-gradient(
+          135deg,
+          #01040b 0%,
+          #020a18 45%,
+          #031327 100%
+        );
+    }
+
+    /* =========================================================
+       BACKGROUND
+    ========================================================= */
+
+    .background {
+      position: absolute;
+      inset: 0;
+      z-index: -10;
+      overflow: hidden;
+    }
+
+    .stars {
+      position: absolute;
+      inset: 0;
+
+      background-image:
+        radial-gradient(circle, rgba(255, 255, 255, 0.85) 1px, transparent 1px),
+        radial-gradient(circle, rgba(63, 176, 255, 0.5) 1px, transparent 1px);
+
+      background-size:
+        120px 120px,
+        190px 190px;
+
+      background-position:
+        10px 30px,
+        70px 90px;
+
+      opacity: 0.24;
+
+      animation: starsMove 25s linear infinite;
+    }
+
+    .nebula {
+      position: absolute;
+      width: 75vw;
+      height: 75vw;
+      max-width: 900px;
+      max-height: 900px;
+
+      left: 50%;
+      top: 35%;
+
+      transform: translate(-50%, -50%);
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(0, 126, 255, 0.14) 0%,
+          rgba(0, 126, 255, 0.05) 35%,
+          transparent 70%
+        );
+
+      filter: blur(35px);
+
+      animation: nebulaPulse 7s ease-in-out infinite;
+    }
+
+    .glow {
+      position: absolute;
+      width: 350px;
+      height: 350px;
+
+      right: -120px;
+      bottom: -120px;
+
+      border-radius: 50%;
+
+      background: rgba(0, 151, 255, 0.2);
+
+      filter: blur(100px);
+
+      animation: glowPulse 5s ease-in-out infinite;
+    }
+
+    .mountains {
+      position: absolute;
+      left: -5%;
+      right: -5%;
+      bottom: -2px;
+
+      height: 28%;
+
+      background:
+        linear-gradient(
+          145deg,
+          transparent 0 24%,
+          rgba(3, 22, 45, 0.95) 24% 31%,
+          transparent 31% 37%,
+          rgba(2, 17, 36, 0.95) 37% 48%,
+          transparent 48%
+        );
+
+      clip-path: polygon(
+        0 100%,
+        0 62%,
+        8% 48%,
+        15% 65%,
+        24% 35%,
+        33% 61%,
+        43% 27%,
+        51% 62%,
+        61% 38%,
+        70% 68%,
+        80% 34%,
+        89% 58%,
+        100% 25%,
+        100% 100%
+      );
+
+      opacity: 0.85;
+    }
+
+    .mountains::after {
+      content: "";
+      position: absolute;
+      inset: 20% 0 0;
+
+      background:
+        linear-gradient(
+          160deg,
+          transparent 0 30%,
+          rgba(5, 39, 76, 0.55) 30% 34%,
+          transparent 34% 100%
+        );
+
+      opacity: 0.8;
+    }
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
+    .header {
+      position: relative;
+      z-index: 20;
+
+      width: min(1400px, calc(100% - 48px));
+
+      margin: 0 auto;
+
+      padding-top: max(24px, env(safe-area-inset-top));
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-size: clamp(13px, 1vw, 17px);
+      font-weight: 900;
+      letter-spacing: 0.28em;
+      color: #ffffff;
+
+      text-shadow:
+        0 0 20px rgba(0, 132, 255, 0.4);
+    }
+
+    .brand span {
+      color: #08aaff;
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 8px 13px;
+
+      border: 1px solid rgba(65, 173, 255, 0.25);
+      border-radius: 999px;
+
+      background: rgba(2, 12, 27, 0.5);
+
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+
+      color: rgba(225, 243, 255, 0.8);
+
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: #2cf0a2;
+
+      box-shadow:
+        0 0 8px #2cf0a2,
+        0 0 18px rgba(44, 240, 162, 0.8);
+
+      animation: statusPulse 1.7s ease-in-out infinite;
+    }
+
+    /* =========================================================
+       MAIN CONTENT
+    ========================================================= */
+
+    .content {
+      position: relative;
+      z-index: 10;
+
+      width: min(1000px, calc(100% - 40px));
+
+      margin: 0 auto;
+
+      min-height: calc(100svh - 90px);
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      padding:
+        45px 0
+        max(65px, env(safe-area-inset-bottom));
+    }
+
+    .eyebrow {
+      margin-bottom: 12px;
+
+      color: #54c8ff;
+
+      font-size: clamp(9px, 0.8vw, 12px);
+      font-weight: 800;
+
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+
+      animation: fadeUp 0.8s ease both;
+    }
+
+    /* =========================================================
+       TITLE
+    ========================================================= */
+
+    .keep {
+      position: relative;
+
+      color: #ffffff;
+
+      font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        cursive;
+
+      font-size: clamp(48px, 7vw, 105px);
+
+      line-height: 0.75;
+
+      transform: rotate(-3deg);
+
+      text-shadow:
+        0 5px 20px rgba(0, 130, 255, 0.25);
+
+      animation:
+        fadeUp 0.8s 0.1s ease both,
+        floatingTitle 5s 1s ease-in-out infinite;
+    }
+
+    .keep::after {
+      content: "";
+
+      position: absolute;
+
+      left: 50%;
+      bottom: -8px;
+
+      width: 75%;
+      height: 7px;
+
+      transform: translateX(-50%) rotate(-2deg);
+
+      border-radius: 100%;
+
+      background: linear-gradient(
+        90deg,
+        transparent,
+        #00aaff,
+        #5bdcff,
+        transparent
+      );
+
+      filter: blur(0.5px);
+
+      opacity: 0.9;
+    }
+
+    .patience {
+      margin-top: 20px;
+
+      font-size: clamp(48px, 8vw, 125px);
+
+      line-height: 0.95;
+
+      font-weight: 950;
+
+      letter-spacing: -0.055em;
+
+      color: transparent;
+
+      background:
+        linear-gradient(
+          100deg,
+          #ffffff 0%,
+          #ffffff 34%,
+          #c9eaff 48%,
+          #09a7ff 72%,
+          #0c78ff 100%
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      filter:
+        drop-shadow(0 12px 30px rgba(0, 117, 255, 0.28));
+
+      animation:
+        fadeUp 0.8s 0.2s ease both,
+        textShine 6s linear infinite;
+    }
+
+    /* =========================================================
+       DESCRIPTION
+    ========================================================= */
+
+    .description {
+      width: min(650px, 100%);
+
+      margin-top: clamp(18px, 2.5vw, 30px);
+
+      color: rgba(235, 245, 255, 0.88);
+
+      font-size: clamp(14px, 1.6vw, 21px);
+
+      line-height: 1.55;
+
+      font-weight: 450;
+
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
+
+    .description strong {
+      color: #13c7ff;
+
+      text-shadow:
+        0 0 15px rgba(0, 185, 255, 0.35);
+    }
+
+    /* =========================================================
+       PROGRESS
+    ========================================================= */
+
+    .progress-wrap {
+      width: min(590px, 100%);
+
+      margin-top: clamp(24px, 3vw, 38px);
+
+      animation: fadeUp 0.8s 0.4s ease both;
+    }
+
+    .progress-row {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .progress {
+      position: relative;
+
+      flex: 1;
+
+      height: 9px;
+
+      border-radius: 999px;
+
+      background: rgba(255, 255, 255, 0.07);
+
+      border: 1px solid rgba(41, 163, 255, 0.35);
+
+      overflow: hidden;
+
+      box-shadow:
+        inset 0 0 10px rgba(0, 0, 0, 0.45),
+        0 0 20px rgba(0, 125, 255, 0.12);
+    }
+
+    .progress-fill {
+      position: absolute;
+      inset: 0 auto 0 0;
+
+      width: 75%;
+
+      border-radius: inherit;
+
+      background:
+        linear-gradient(
+          90deg,
+          #006eff,
+          #00bfff,
+          #7be7ff
+        );
+
+      box-shadow:
+        0 0 12px #009fff,
+        0 0 28px rgba(0, 164, 255, 0.7);
+
+      animation:
+        progressGlow 2s ease-in-out infinite alternate;
+    }
+
+    .progress-fill::after {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      bottom: 0;
+
+      width: 80px;
+
+      right: -80px;
+
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.9),
+        transparent
+      );
+
+      animation: progressSweep 2.4s linear infinite;
+    }
+
+    .percent {
+      min-width: 34px;
+
+      color: #d9f4ff;
+
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    /* =========================================================
+       FEATURES
+    ========================================================= */
+
+    .features {
+      width: min(700px, 100%);
+
+      margin-top: clamp(25px, 3vw, 42px);
+
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      border-top: 1px solid rgba(72, 172, 255, 0.15);
+      border-bottom: 1px solid rgba(72, 172, 255, 0.15);
+
+      animation: fadeUp 0.8s 0.5s ease both;
+    }
+
+    .feature {
+      position: relative;
+
+      min-width: 0;
+
+      padding:
+        17px
+        12px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      gap: 8px;
+    }
+
+    .feature:not(:last-child)::after {
+      content: "";
+
+      position: absolute;
+
+      right: 0;
+      top: 20%;
+
+      width: 1px;
+      height: 60%;
+
+      background: rgba(72, 172, 255, 0.2);
+    }
+
+    .feature-icon {
+      width: 24px;
+      height: 24px;
+
+      display: grid;
+      place-items: center;
+
+      color: #11b9ff;
+
+      font-size: 21px;
+
+      filter:
+        drop-shadow(0 0 7px rgba(0, 176, 255, 0.65));
+    }
+
+    .feature-title {
+      color: rgba(235, 246, 255, 0.9);
+
+      font-size: 11px;
+      font-weight: 700;
+
+      line-height: 1.3;
+    }
+
+    .feature-subtitle {
+      color: rgba(164, 190, 211, 0.7);
+
+      font-size: 9px;
+      line-height: 1.3;
+    }
+
+    /* =========================================================
+       FOOTER MESSAGE
+    ========================================================= */
+
+    .support {
+      margin-top: 28px;
+
+      color: rgba(193, 219, 237, 0.55);
+
+      font-size: 9px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.32em;
+
+      text-transform: uppercase;
+
+      animation: fadeUp 0.8s 0.6s ease both;
+    }
+
+    .support::before,
+    .support::after {
+      content: "";
+
+      display: inline-block;
+
+      width: 42px;
+      height: 1px;
+
+      vertical-align: middle;
+
+      margin: 0 12px;
+
+      background: linear-gradient(
+        90deg,
+        transparent,
+        #168dff
+      );
+
+      box-shadow: 0 0 8px #168dff;
+    }
+
+    .support::after {
+      background: linear-gradient(
+        90deg,
+        #168dff,
+        transparent
+      );
+    }
+
+    /* =========================================================
+       ASTRONAUT
+       Pure CSS / SVG-style character
+    ========================================================= */
+
+    .astronaut {
+      position: absolute;
+
+      z-index: 3;
+
+      right: clamp(3%, 7vw, 11%);
+      bottom: 4%;
+
+      width: clamp(180px, 19vw, 330px);
+
+      opacity: 0.9;
+
+      filter:
+        drop-shadow(0 20px 35px rgba(0, 0, 0, 0.7))
+        drop-shadow(0 0 20px rgba(0, 105, 255, 0.16));
+
+      animation: astronautFloat 6s ease-in-out infinite;
+
+      pointer-events: none;
+    }
+
+    .astronaut svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* =========================================================
+       ANIMATIONS
+    ========================================================= */
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floatingTitle {
+      0%,
+      100% {
+        transform: rotate(-3deg) translateY(0);
+      }
+
+      50% {
+        transform: rotate(-3deg) translateY(-5px);
+      }
+    }
+
+    @keyframes astronautFloat {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes statusPulse {
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.45;
+        transform: scale(0.75);
+      }
+    }
+
+    @keyframes starsMove {
+      from {
+        transform: translateY(0);
+      }
+
+      to {
+        transform: translateY(60px);
+      }
+    }
+
+    @keyframes nebulaPulse {
+      0%,
+      100% {
+        opacity: 0.55;
+        transform: translate(-50%, -50%) scale(0.95);
+      }
+
+      50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.08);
+      }
+    }
+
+    @keyframes glowPulse {
+      0%,
+      100% {
+        opacity: 0.55;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes progressGlow {
+      from {
+        filter: brightness(0.85);
+      }
+
+      to {
+        filter: brightness(1.3);
+      }
+    }
+
+    @keyframes progressSweep {
+      from {
+        transform: translateX(-40px);
+      }
+
+      to {
+        transform: translateX(500px);
+      }
+    }
+
+    @keyframes textShine {
+      0% {
+        filter:
+          drop-shadow(0 12px 30px rgba(0, 117, 255, 0.2));
+      }
+
+      50% {
+        filter:
+          drop-shadow(0 12px 40px rgba(0, 180, 255, 0.45));
+      }
+
+      100% {
+        filter:
+          drop-shadow(0 12px 30px rgba(0, 117, 255, 0.2));
+      }
+    }
+
+    /* =========================================================
+       LARGE SCREENS
+    ========================================================= */
+
+    @media (min-width: 1600px) {
+      .content {
+        max-width: 1150px;
+      }
+
+      .astronaut {
+        right: 9%;
+        width: 350px;
+      }
+    }
+
+    /* =========================================================
+       TABLET
+    ========================================================= */
+
+    @media (max-width: 900px) {
+      .header {
+        width: calc(100% - 32px);
+      }
+
+      .content {
+        width: calc(100% - 40px);
+      }
+
+      .astronaut {
+        width: 175px;
+        right: -20px;
+        bottom: 5%;
+        opacity: 0.65;
+      }
+
+      .features {
+        width: min(650px, 100%);
+      }
+    }
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 600px) {
+      .page {
+        min-height: 100svh;
+      }
+
+      .header {
+        width: calc(100% - 24px);
+
+        padding-top:
+          max(14px, env(safe-area-inset-top));
+      }
+
+      .brand {
+        font-size: 10px;
+        letter-spacing: 0.22em;
+      }
+
+      .status {
+        padding: 6px 8px;
+        gap: 6px;
+
+        font-size: 7px;
+        letter-spacing: 0.08em;
+      }
+
+      .status-dot {
+        width: 5px;
+        height: 5px;
+      }
+
+      .content {
+        width: calc(100% - 28px);
+
+        min-height: calc(100svh - 55px);
+
+        padding:
+          45px 0
+          max(55px, env(safe-area-inset-bottom));
+
+        justify-content: center;
+      }
+
+      .eyebrow {
+        margin-bottom: 9px;
+
+        font-size: 7px;
+        letter-spacing: 0.25em;
+      }
+
+      .keep {
+        font-size: clamp(43px, 16vw, 65px);
+      }
+
+      .keep::after {
+        bottom: -5px;
+        height: 5px;
+      }
+
+      .patience {
+        margin-top: 14px;
+
+        font-size: clamp(43px, 16vw, 68px);
+
+        letter-spacing: -0.065em;
+      }
+
+      .description {
+        width: min(340px, 100%);
+
+        margin-top: 18px;
+
+        font-size: clamp(12px, 3.6vw, 15px);
+
+        line-height: 1.5;
+      }
+
+      .progress-wrap {
+        width: min(340px, 100%);
+
+        margin-top: 23px;
+      }
+
+      .progress {
+        height: 7px;
+      }
+
+      .percent {
+        font-size: 9px;
+        min-width: 28px;
+      }
+
+      .features {
+        width: min(350px, 100%);
+
+        margin-top: 23px;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        border: 0;
+
+        background: rgba(3, 18, 35, 0.28);
+
+        border: 1px solid rgba(72, 172, 255, 0.13);
+
+        border-radius: 16px;
+
+        overflow: hidden;
+
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+      }
+
+      .feature {
+        min-height: 75px;
+
+        padding: 12px 8px;
+      }
+
+      .feature:nth-child(1),
+      .feature:nth-child(2) {
+        border-bottom: 1px solid rgba(72, 172, 255, 0.12);
+      }
+
+      .feature:nth-child(odd) {
+        border-right: 1px solid rgba(72, 172, 255, 0.12);
+      }
+
+      .feature:not(:last-child)::after {
+        display: none;
+      }
+
+      .feature-icon {
+        font-size: 19px;
+        width: 20px;
+        height: 20px;
+      }
+
+      .feature-title {
+        font-size: 9px;
+      }
+
+      .feature-subtitle {
+        font-size: 7px;
+      }
+
+      .support {
+        margin-top: 20px;
+
+        font-size: 6px;
+
+        letter-spacing: 0.18em;
+      }
+
+      .support::before,
+      .support::after {
+        width: 20px;
+        margin: 0 7px;
+      }
+
+      .astronaut {
+        width: 105px;
+
+        right: -16px;
+        bottom: 1.5%;
+
+        opacity: 0.5;
+
+        filter:
+          drop-shadow(0 10px 25px rgba(0, 0, 0, 0.8))
+          drop-shadow(0 0 14px rgba(0, 105, 255, 0.15));
+      }
+
+      .mountains {
+        height: 20%;
+      }
+
+      .nebula {
+        width: 140vw;
+        height: 140vw;
+      }
+
+      .glow {
+        width: 220px;
+        height: 220px;
+      }
+    }
+
+    /* =========================================================
+       SMALL MOBILE — 320px / 360px
+    ========================================================= */
+
+    @media (max-width: 380px) {
+      .header {
+        width: calc(100% - 18px);
+      }
+
+      .brand {
+        font-size: 8px;
+      }
+
+      .status {
+        font-size: 6px;
+        padding: 5px 7px;
+      }
+
+      .content {
+        width: calc(100% - 18px);
+
+        padding-top: 38px;
+      }
+
+      .eyebrow {
+        font-size: 6px;
+      }
+
+      .keep {
+        font-size: 43px;
+      }
+
+      .patience {
+        font-size: 43px;
+      }
+
+      .description {
+        font-size: 11px;
+        max-width: 290px;
+      }
+
+      .progress-wrap {
+        max-width: 290px;
+      }
+
+      .features {
+        max-width: 300px;
+      }
+
+      .feature {
+        min-height: 68px;
+      }
+
+      .feature-title {
+        font-size: 8px;
+      }
+
+      .feature-subtitle {
+        font-size: 6px;
+      }
+
+      .astronaut {
+        width: 85px;
+        right: -18px;
+      }
+
+      .support {
+        font-size: 5.5px;
+      }
+    }
+
+    /* =========================================================
+       LANDSCAPE PHONE
+    ========================================================= */
+
+    @media (max-height: 560px) and (orientation: landscape) {
+      .header {
+        padding-top: 8px;
+      }
+
+      .content {
+        min-height: calc(100svh - 35px);
+
+        padding:
+          25px 0
+          35px;
+      }
+
+      .eyebrow {
+        margin-bottom: 5px;
+        font-size: 6px;
+      }
+
+      .keep {
+        font-size: clamp(34px, 8vh, 55px);
+      }
+
+      .patience {
+        margin-top: 8px;
+        font-size: clamp(35px, 9vh, 62px);
+      }
+
+      .description {
+        margin-top: 8px;
+        font-size: 10px;
+        max-width: 450px;
+      }
+
+      .progress-wrap {
+        margin-top: 12px;
+        max-width: 430px;
+      }
+
+      .progress {
+        height: 5px;
+      }
+
+      .features {
+        margin-top: 12px;
+        max-width: 500px;
+      }
+
+      .feature {
+        padding: 7px;
+        min-height: 50px;
+      }
+
+      .feature-icon {
+        font-size: 15px;
+      }
+
+      .feature-title {
+        font-size: 7px;
+      }
+
+      .feature-subtitle {
+        display: none;
+      }
+
+      .support {
+        margin-top: 8px;
+        font-size: 5px;
+      }
+
+      .astronaut {
+        width: 110px;
+        right: 3%;
+        bottom: 2%;
+      }
+    }
+
+    /* =========================================================
+       ACCESSIBILITY
+    ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+
+    <!-- ================= BACKGROUND ================= -->
+
+    <div class="background">
+      <div class="stars"></div>
+      <div class="nebula"></div>
+      <div class="glow"></div>
+      <div class="mountains"></div>
+    </div>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+      <div class="brand">
+        SYSN<span>EXIT</span>
+      </div>
+
+      <div class="status">
+        <span class="status-dot"></span>
+        We're Building
+      </div>
+
+    </header>
+
+
+    <!-- ================= ASTRONAUT ================= -->
+
+    <div class="astronaut" aria-hidden="true">
+
+      <svg
+        viewBox="0 0 300 380"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+
+        <!-- shadow -->
+        <ellipse
+          cx="155"
+          cy="360"
+          rx="105"
+          ry="15"
+          fill="#000"
+          opacity=".55"
+        />
+
+        <!-- backpack -->
+        <path
+          d="M110 125
+             C92 145 88 205 97 250
+             L125 260
+             L146 175
+             L142 132 Z"
+          fill="#071522"
+          stroke="#168dff"
+          stroke-width="3"
+        />
+
+        <!-- backpack light -->
+        <rect
+          x="108"
+          y="160"
+          width="8"
+          height="65"
+          rx="4"
+          fill="#00bfff"
+          opacity=".9"
+        />
+
+        <!-- body -->
+        <path
+          d="M120 135
+             C101 165 100 214 110 258
+             L150 278
+             L190 253
+             C190 205 179 160 161 137
+             Z"
+          fill="#0a1828"
+          stroke="#4dbdff"
+          stroke-width="3"
+        />
+
+        <!-- chest panel -->
+        <rect
+          x="128"
+          y="166"
+          width="45"
+          height="48"
+          rx="7"
+          fill="#07121f"
+          stroke="#258dca"
+          stroke-width="2"
+        />
+
+        <circle
+          cx="140"
+          cy="181"
+          r="4"
+          fill="#0ee6ff"
+        />
+
+        <circle
+          cx="153"
+          cy="181"
+          r="4"
+          fill="#168dff"
+        />
+
+        <rect
+          x="137"
+          y="194"
+          width="27"
+          height="5"
+          rx="2"
+          fill="#168dff"
+        />
+
+        <!-- helmet -->
+        <circle
+          cx="145"
+          cy="85"
+          r="58"
+          fill="#071522"
+          stroke="#56c9ff"
+          stroke-width="4"
+        />
+
+        <!-- helmet glass -->
+        <ellipse
+          cx="151"
+          cy="86"
+          rx="43"
+          ry="38"
+          fill="#020a13"
+          stroke="#168dff"
+          stroke-width="3"
+        />
+
+        <ellipse
+          cx="163"
+          cy="74"
+          rx="24"
+          ry="12"
+          fill="#75dcff"
+          opacity=".12"
+        />
+
+        <!-- left arm -->
+        <path
+          d="M117 150
+             C90 172 68 205 58 231
+             L75 245
+             C102 221 122 195 132 169 Z"
+          fill="#0a1828"
+          stroke="#3dbaff"
+          stroke-width="3"
+        />
+
+        <!-- right arm -->
+        <path
+          d="M175 151
+             C197 168 210 193 219 219
+             L202 232
+             C181 205 167 184 160 163 Z"
+          fill="#0a1828"
+          stroke="#3dbaff"
+          stroke-width="3"
+        />
+
+        <!-- left leg -->
+        <path
+          d="M118 251
+             L151 266
+             L126 325
+             L92 315
+             Z"
+          fill="#081725"
+          stroke="#3dbaff"
+          stroke-width="3"
+        />
+
+        <!-- right leg -->
+        <path
+          d="M151 266
+             L183 250
+             L207 315
+             L171 329
+             Z"
+          fill="#081725"
+          stroke="#3dbaff"
+          stroke-width="3"
+        />
+
+        <!-- boots -->
+        <path
+          d="M90 311
+             L127 320
+             L118 345
+             L79 338
+             Z"
+          fill="#050c15"
+          stroke="#168dff"
+          stroke-width="3"
+        />
+
+        <path
+          d="M169 325
+             L207 312
+             L222 338
+             L178 347
+             Z"
+          fill="#050c15"
+          stroke="#168dff"
+          stroke-width="3"
+        />
+
+        <!-- blue rim lights -->
+        <path
+          d="M98 102 C105 126 119 136 136 141"
+          fill="none"
+          stroke="#00cfff"
+          stroke-width="4"
+          opacity=".8"
+        />
+
+        <path
+          d="M184 100 C179 124 169 134 157 140"
+          fill="none"
+          stroke="#168dff"
+          stroke-width="4"
+          opacity=".7"
+        />
+
+      </svg>
+
+    </div>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <section class="content">
+
+      <div class="eyebrow">
+        The next chapter is loading...
+      </div>
+
+
+      <div class="keep">
+        KEEP
+      </div>
+
+
+      <h1 class="patience">
+        PATIENCE
+      </h1>
+
+
+      <p class="description">
+        We are trying hard to make this site
+        <br class="desktop-break">
+        available for you
+        <strong>very soon.</strong>
+      </p>
+
+
+      <!-- ================= PROGRESS ================= -->
+
+      <div class="progress-wrap">
+
+        <div class="progress-row">
+
+          <div class="progress">
+            <div class="progress-fill"></div>
+          </div>
+
+          <div class="percent">
+            75%
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= FEATURES ================= -->
+
+      <div class="features">
+
+        <div class="feature">
+
+          <div class="feature-icon">
+            ⚡
+          </div>
+
+          <div class="feature-title">
+            Better<br>
+            Performance
+          </div>
+
+          <div class="feature-subtitle">
+            Faster experience
+          </div>
+
+        </div>
+
+
+        <div class="feature">
+
+          <div class="feature-icon">
+            ♢
+          </div>
+
+          <div class="feature-title">
+            More<br>
+            Secure
+          </div>
+
+          <div class="feature-subtitle">
+            Built with care
+          </div>
+
+        </div>
+
+
+        <div class="feature">
+
+          <div class="feature-icon">
+            🚀
+          </div>
+
+          <div class="feature-title">
+            New<br>
+            Experience
+          </div>
+
+          <div class="feature-subtitle">
+            Something new
+          </div>
+
+        </div>
+
+
+        <div class="feature">
+
+          <div class="feature-icon">
+            ♡
+          </div>
+
+          <div class="feature-title">
+            Made<br>
+            For You
+          </div>
+
+          <div class="feature-subtitle">
+            Designed for you
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="support">
+        Thank you for your support
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <script>
+    /*
+      Small enhancement:
+      On touch devices, pause some background movement while the page
+      is being interacted with. The page remains fully functional
+      without JavaScript as well.
+    */
+
+    const page = document.querySelector(".page");
+
+    let timer;
+
+    function wakeBackground() {
+      page.classList.add("active");
+
+      clearTimeout(timer);
+
+      timer = setTimeout(() => {
+        page.classList.remove("active");
+      }, 1200);
+    }
+
+    window.addEventListener("touchstart", wakeBackground, {
+      passive: true
+    });
+
+    window.addEventListener("mousemove", wakeBackground, {
+      passive: true
+    });
+  </script>
+
+</body>
+</html>
